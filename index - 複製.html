@@ -1,0 +1,29 @@
+<div id="game">
+  <p>請猜一個1~100之間的數字：</p>
+  <p>
+    猜的數字：
+    <input type="text" id="answer">
+    <a href="#" onclick="checkAnswer()">提交答案</a>
+  </p>
+
+  <p id="result"></p>
+</div>
+
+<script>
+  var correctAnswer = 50; // 正確答案
+
+  function checkAnswer() {
+    var answer = document.getElementById("answer").value;
+
+    if (answer < 1 || answer > 100) {
+      // 如果猜的數字不在1~100之間，顯示 "請填1~100之間的數字"
+      document.getElementById("result").innerHTML = "請填1~100之間的數字";
+    } else if (answer == correctAnswer) {
+      // 如果猜的數字正確，顯示 "成功"
+      document.getElementById("result").innerHTML = "成功";
+    } else {
+      // 其他情況，顯示 "失敗"
+      document.getElementById("result").innerHTML = "失敗";
+    }
+  }
+</script>
